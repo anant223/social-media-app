@@ -1,0 +1,41 @@
+body{
+    background-image: rgb(237 237 245);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container,.container1{
+    margin: auto;
+    padding: 10px;
+    width: 440px;
+    height: 480px;
+    background-color: rgb(237 239 241);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 /10%);
+
+}
+.name-input, .email-input, .password-input, .confirm-p-input{
+    margin-top: 20px;
+}
+
+input{
+    padding: 8px;
+    width: 16rem;
+    outline: none;
+    background-color: transparent;
+    border-style: none none solid none;
+    border: 0.5px solid black;
+    border-radius: 6px;
+}
+#btn, #btn1{
+    margin-top: 37px;
+    width: 17rem;
+    height: 2rem;
+    background: #1877f2;
+    color: rgb(229, 229, 239);
+    border-style: none;
+    border-radius: 6px;
+}
+
+#btn1{
+    margin-top: 23px;
+    
+}

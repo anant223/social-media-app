@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://see.fontimg.com/api/renderfont4/lg2Bw/eyJyIjoiZnMiLCJoIjozMSwidyI6MTI1MCwiZnMiOjI1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/Y29kZWlhbA/feelfree-personal-use-regular.png" alt="" style="padding-top:22px;">
+        <h3>Sign Up</h3>
+        <div class="form-container">
+            <form action="/users/create" method="POST">
+                <div class="name-input">
+                    <input type="text" name="name" id="name" placeholder="Full Name" required>
+                </div>
+                <div class="email-input">
+                    <input type="email" name="email" id="" placeholder="Email Adderess" required>
+                </div>
+                <div class="password-input">
+                    <input type="password" name="password" id="" placeholder="Enter New Password" required>
+                </div>
+                <div class="confirm-p-input">
+                    <input type="password" name="confirm_password" id="" placeholder="Confirm Your Password" required>
+                </div>
+                <div class="button">
+                    <button id="btn">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

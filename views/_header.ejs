@@ -1,31 +1,35 @@
-<link rel="stylesheet" href="/css/header.css">
 <header id="layout-header">
-    <div id="logo">
-        <p>Codeial</p>
-    </div>
-    <div class="nav">
-        <div class="list-container">
+    <nav>
+        <div class="mini-logo">
+            <p>
+                <a href='/'>
+                    codeial
+                </a>
+            </p>
+        </div>
+    
+        <div class="auth-links">
             <ul>
-                <% if (locals.user){%>
-                    <div class="name-logout">
-                        <li><%= user.name %></li>
-                        <li>
-                            <a href="/users/signout">Log out</a>
-                        </li>
-                    </div>
-        
+                <% if (locals.user){ %>
+                <li>
+                    <a href="/users/profile"><%= user.name %></a>
+                </li>
+                <li>
+                    <a href="/users/signout">Log Out</a>
+                </li>
                 <% }else{ %>
-                    <div class="login-newAccout">
-                        <li>
-                            <a href="/users/signin"> Log in </a>
-                        </li>
-
-                        <li>
-                            <a href="/users/signup"> &nbsp Create account </a>
-                        </li>
-                    </div>
+                <li>
+                    <a href="/users/signin">Log In</a>
+                </li>
+                <li>
+                    <a href="/users/signup">Sign Up</a>
+                </li>
+        
                 <% } %>
             </ul>
         </div>
-    </div>
+    </nav>
+ 
+
+
 </header>

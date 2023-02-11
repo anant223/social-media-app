@@ -1,3 +1,9 @@
+.user-friends{
+  display: flex;
+  justify-content: right;
+
+}
+
 .postWrapper {
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
@@ -153,11 +159,13 @@
 }
 .friendsList {
   background: #fff;
-  margin-left: 50px;
-  flex-grow: 0.2;
-  height: 50vh;
+  /* margin-left: 50px; */
+  height: 511px;
+  position:absolute;
+  right: 6px;
+  top: 208px;
+  width: 300px;
   box-sizing: border-box;
-  margin-top: 20px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   overflow-y: scroll;
@@ -206,7 +214,9 @@
   border-radius: 4px;
   width: 46%;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 68px;
+  position: static;
+ 
 }
 .createPost > div {
   padding: 10px;

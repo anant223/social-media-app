@@ -5,6 +5,9 @@
   background: #a675e6;
   color: white;
   box-shadow: 1px 1px 1px 1px lightgrey;
+  position: fixed;
+  width: 99%;
+  top: 0;
 
   
 

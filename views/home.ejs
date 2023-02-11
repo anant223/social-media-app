@@ -1,12 +1,15 @@
 <link rel="stylesheet" href="/css/home.css">
-<!-- <h1>Codeial</h1> -->
+<link rel="stylesheet" href="/css/chatBox.css">
 
+
+
+  
 <section id="feed-posts">
-    <!-- <h4>Posts</h4> -->
     <% if (locals.user) {%>
     <form action="/posts/create" id="new-post-form" method="POST">
         <div class = 'createPost'>
-      <textarea class="addPost" name="content" cols="30" rows="10" placeholder="Type Here...">
+      <textarea name="content" cols="20" rows="1"   placeholder="Type Here..." required>
+
       </textarea>
       <div>
         <button
@@ -20,62 +23,46 @@
 
     <div class="posts-list-container" style=" padding-left: 24%;
     padding-right: 27%;">
-        <div class="">
+        <div id="posts-list-container">
           <ul>
             <% for(post of posts){%>
-              <div class= "postWrapper">
-                <div class= "postHeader">
-                  <div class="postAvatar">
-                   <img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" alt="user-pic">
-                    <div>
-                      <a class= "postAuthor">
-                        <%= post.user.name %>
-                      </a>
-                    <span class= "postTime">a minute ago</span>
-                  </div>
-              </div>
-              <div class= "postContent"> <%= post.content %></div>
-                <div class= "postActions">
-                  <div class= "postLike">
-                    <button>
-                      <img src="https://cdn-icons-png.flaticon.com/512/3128/3128313.png" alt="likes-icon">
-                    </button>
-
-                    <span>15</span>
-                  </div>
-
-            <div class= "postCommentsIcon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2190/2190552.png"
-                alt="comments-icon"
-              >
-              <span>{post.comments.length}</span>
-            </div>
-          </div>
-          <div class= "postCommentBox">
-            <input type="text"
-              placeholder="Start typing a comment"
-              value= comment
-            >
-            
-          </div>
-
-          <div class="postCommentsList">
-            <!-- {post.comments.map((comment) => (
-              <Comment comment={comment} />
-            ))} -->
-          </div>
-        </div>
-      </div>
-              <!-- <li>
-                 <%= post.content %>
-                 <small>
-                    <%= post.user.name %>
-                 </small>
-              </li> -->
+              <%- include('_post')-%>
             <%}%>
           </ul>
-
         </div>
     </div>
 </section>
+
+<% if (locals.user) {%>
+<section class="user-friends">
+  
+<div class= "friendsList">
+        <div class= "header">Friends</div>
+            <% for(u of all_users){%>
+              <%- include('_friendList')-%>
+
+            <%}%>
+  
+      </div>
+</section>
+<%}%>
+<%- include("_chatBox")%>
+</div>
+
+<script src="/js/home_posts.js"></script>
+<script src="/js/home_comment.js"></script>
+<script src="/js/toggle_likes.js"></script>
+
+<script>
+    $('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js"></script>
+<script src="/js/chat_engines.js"></script>
+<% if(locals.user){%>
+<script>
+  new ChatEngine('user-chat-box', "<%= locals.user.name%>")
+</script>
+<%}%>

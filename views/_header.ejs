@@ -12,12 +12,15 @@
             <ul>
                 <% if (locals.user){ %>
                 <li>
-                    <a href="/users/profile"><%= user.name %></a>
+                    <a href="/users/profile/<%= user.id%>"> <%= user.name %></a>
                 </li>
                 <li>
                     <a href="/users/signout">Log Out</a>
                 </li>
+
                 <% }else{ %>
+
+
                 <li>
                     <a href="/users/signin">Log In</a>
                 </li>
@@ -26,10 +29,9 @@
                 </li>
         
                 <% } %>
+
             </ul>
         </div>
     </nav>
- 
-
-
 </header>
+

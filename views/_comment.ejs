@@ -1,9 +1,29 @@
-<div class= "postCommentsItem">
-                        <div className= "postCommentHeader">
-                        <span className= "postCommentAuthor">{comment.user.name}</span>
-                        <span className= "postCommentTime">a minute ago</span>
-                        <span className= "postCommentLikes">22</span>
-                    </div>
+<li id= "comment-<%= comment._id %>">
 
-                    <div className={styles.postCommentContent}>{comment.content}</div>
-                    </div>
+  <div class= "postCommentsItem">
+  <div class= "postCommentHeader">
+    <span class= "postCommentAuthor"><%= comment.user.name %></span>
+    <span class= "postCommentTime">a minute ago</span>
+    
+  </div>
+  <div class=postCommentContent>
+    <%= comment.content %>
+    <% if (locals.user && locals.user.id == comment.user.id){ %>
+      <a href="/comments/destroy/<%= comment._id %>" class="delete-comment-button">X</a>
+
+    <%}%>
+                    
+  </div>
+  <small class= "postCommentLikes">
+        <% if (locals.user){ %>
+                    <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+                            <%= comment.likes.length %> Likes
+                    </a>
+                <% }else{ %>
+                    <%= comment.likes.length %> Likes
+                <% } %>
+  </small>
+</div> 
+
+</li>
+ 

@@ -1,0 +1,84 @@
+<div class= "postWrapper" id="post-<%= post._id %>">
+  <div class= "postHeader">
+    <div class="postAvatar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScdGAFZS8P9rXmHkXMDp_vgYHzKMsrO5xSww&usqp=CAU"  alt="user-pic">
+      <div>
+        <a class= "postAuthor">
+          <%= post.user.name %>
+        </a>
+        <span class= "postTime">a minute ago</span>
+      </div>   
+      <p>
+        <% if(locals.user && locals.user.id == post.user.id){%>
+          <!-- <small> -->
+          <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">X</a>
+          <!-- </small> -->
+        <%}%>
+      </p>     
+    </div>    
+    <div class= "postContent"> <%= post.content %></div>
+      <div class= "postActions">
+        <div class= "postLike">
+          <% if (locals.user){ %>
+          <button id="btn" class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
+            <img  src="https://cdn-icons-png.flaticon.com/512/3128/3128313.png" alt="likes-icon">
+            
+          </button>
+          <span><%= post.likes.length %></span>
+          <% }else{ %>
+                <%= post.likes.length %> Likes
+          <% } %>
+          <!-- <span id="num">0</span> -->
+        </div>
+        <div class= "postCommentsIcon">
+          <img
+          src="https://cdn-icons-png.flaticon.com/512/2190/2190552.png"
+          alt="comments-icon">
+          <span><%= post.comments.length %></span>
+        </div>
+      </div>
+      <div class= "postCommentBox">
+        <% if (locals.user){%>
+          <form action="/comments/create" id="new-comment-form" method="post">
+            <input type="text" name="content" placeholder="Comment on it...">
+                <!-- the id of the post which comment need to be added -->
+            <input type="hidden" name="post" value="<%= post._id %>">
+            <input type="submit" value="Add Comment">
+          </form>
+        <%}%>
+      </div>
+      <div class="postCommentsList">
+        <div id="postCommentList">
+          <ul id="post-comment-<%= post._id %>">
+          <% for(comment of post.comments) {%>
+              <%-include('_comment')-%>
+          <%}%>
+        </ul>
+
+        </div>
+                  
+      </div>
+  </div>
+</div>
+
+<script>
+
+  let count = 0;
+  function increaseCount(){
+   
+    const num = document.getElementById("#num");
+    count ++
+    num.innerHTML = count
+    console.log(count)
+  }
+
+  document.getElementById("#btn")
+
+
+
+  
+  // document.addEventListener('DOMContentLoaded', function(){
+  //   document.getElementById("#btn").onclick = increaseCount
+  // })
+
+</script>

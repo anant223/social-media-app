@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/signin.css">
 </head>
 <body>
     <div class="container1">
+        <div class="elements">
         <img src="https://see.fontimg.com/api/renderfont4/lg2Bw/eyJyIjoiZnMiLCJoIjozMSwidyI6MTI1MCwiZnMiOjI1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/Y29kZWlhbA/feelfree-personal-use-regular.png" alt="img" style="padding-top:22px;">
         <h3>Sign In</h3>
         <div class="form-container">
@@ -19,12 +20,34 @@
         
                 <div class="button">
                     <button id="btn1">Sign In</button>
+
                 </div>
-                <small>don't have account <a href="/users/signup">signup</a></small>
+                
+                
             </form>
-            <P>
-                <a href="/users/auth/google">Google Sign In/Sign Up</a>
-            </P>
+                <div class="singupAcct">
+                    <small>don't have account? <a href="/users/signup">signup</a></small>
+                </div>
+
+
+                <div class="or">
+                    --------------- OR ----------------
+                </div>
+                
+            <div class="google_auth">
+                
+                
+                <a href="/users/auth/google" style="text-decoration: none;">
+                    
+        
+          
+                    Continue With Google
+                   </a>
+                
+
+            </div>
+            
+        </div>
         </div>
     </div>
 

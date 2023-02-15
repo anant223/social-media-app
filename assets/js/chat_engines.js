@@ -1,4 +1,5 @@
 class ChatEngine{
+
     constructor(chatBoxId, userEmail){
         this.chatBox  = $(`#${chatBoxId}`);
         this.userEmail = userEmail;
@@ -11,7 +12,9 @@ class ChatEngine{
     }
 
     connectionHandler(){
+
       let self = this;
+      
       this.socket.on("connect", function () {
         console.log("connection established using sockets...!");
 

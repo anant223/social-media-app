@@ -31,10 +31,6 @@ module.exports.chatSockets = function(socketServer){
         io.in(data.chatroom).emit("receive_message", data);
 
       });
-        
-
-        
+              
     })
-
-
 } 

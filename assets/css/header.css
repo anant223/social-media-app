@@ -1,16 +1,13 @@
 #layout-header nav {
   display: flex;
   justify-content: space-between;
-  padding: 10px 10px;
-  background: #a675e6;
+  padding: 4px 10px;
+  background: #6334a1;
   color: white;
   box-shadow: 1px 1px 1px 1px lightgrey;
   position: fixed;
   width: 99%;
   top: 0;
-
-  
-
 }
   #layout-header nav .mini-logo p {
     margin: 5px;

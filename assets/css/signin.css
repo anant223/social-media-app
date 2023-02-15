@@ -12,7 +12,7 @@ body{
     margin-top: 20px;
 }
 
-input, #btn, .google_auth>a{
+input, #btn, #btn1, .google_auth>a{
     padding: 8px;
     width: 16rem;
     outline: none;
@@ -22,13 +22,14 @@ input, #btn, .google_auth>a{
     border-radius: 2px;
 }
 
-#btn{
+#btn1{
     width: 274px;
     background-color:  #6334a1;
     color: whitesmoke;
 }
-.button{
-    margin-top: 20px;
+
+.singupAcct{
+    margin-top: 10px;
 }
 
 .google_auth{
@@ -43,3 +44,12 @@ input, #btn, .google_auth>a{
 .or{
     margin-top: 22px;
 }
+
+
+
+
+
+
+
+
+
